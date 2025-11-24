@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - MediCare Plus</title>
+    <link rel="stylesheet" href="doctors.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" width="100px" height="100px">
+                <h1>MediCare Plus</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html" class="active">Doctors</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Doctors Hero Section -->
+    <section class="doctors-hero">
+        <div class="container">
+            <h1>Meet Our Expert Doctors</h1>
+            <p>Highly qualified medical professionals dedicated to providing you with the best healthcare experience</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <h3>Filter by Availability</h3>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="day-filter">Available Day:</label>
+                        <select id="day-filter" class="filter-select">
+                            <option value="all">All Days</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="department-filter">Department:</label>
+                        <select id="department-filter" class="filter-select">
+                            <option value="all">All Departments</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="radiology">Radiology</option>
+                        </select>
+                    </div>
+                    <button class="filter-reset" id="reset-filters">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardiology Doctors -->
+    <section class="department-doctors" data-department="cardiology">
+        <div class="container">
+            <h2 class="department-title">
+                <i class="fas fa-heart"></i>
+                Cardiology Specialists
+            </h2>
+            <div class="doctors-grid">
+                <div class="doctor-card" data-availability="monday,wednesday,friday">
+                    <div class="doctor-image">
+                        <img src="sarah.jpg" alt="Dr. Sarah Chen">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Chen</h3>
+                        <p class="specialization">Cardiologist</p>
+                        <p class="experience">15+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.8/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon, Wed, Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="tuesday,thursday,saturday">
+                    <div class="doctor-image">
+                        <img src="micheal.jpg" alt="Dr. Michael Rodriguez">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Michael Rodriguez</h3>
+                        <p class="specialization">Cardiac Surgeon</p>
+                        <p class="experience">12+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(5.0/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Tue, Thu, Sat</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="monday,tuesday,thursday">
+                    <div class="doctor-image">
+                        <img src="jennifer.jpg" alt="Dr. Jennifer Park">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Jennifer Park</h3>
+                        <p class="specialization">Electrophysiologist</p>
+                        <p class="experience">10+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★☆</span>
+                            <span>(4.7/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon, Tue, Thu</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pediatrics Doctors -->
+    <section class="department-doctors alt-section" data-department="pediatrics">
+        <div class="container">
+            <h2 class="department-title">
+                <i class="fas fa-baby"></i>
+                Pediatrics Specialists
+            </h2>
+            <div class="doctors-grid">
+                <div class="doctor-card" data-availability="monday,tuesday,wednesday,thursday,friday">
+                    <div class="doctor-image">
+                        <img src="emily.jpg" alt="Dr. Emily Watson">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Emily Watson</h3>
+                        <p class="specialization">Pediatrician</p>
+                        <p class="experience">10+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon-Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="wednesday,friday,saturday">
+                    <div class="doctor-image">
+                        <img src="james.jpeg" alt="Dr. James Kumar">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. James Kumar</h3>
+                        <p class="specialization">Pediatric Neurologist</p>
+                        <p class="experience">14+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★☆</span>
+                            <span>(4.7/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Wed, Fri, Sat</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="tuesday,thursday,friday">
+                    <div class="doctor-image">
+                        <img src="maria.jpeg" alt="Dr. Maria Gonzalez">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Maria Gonzalez</h3>
+                        <p class="specialization">Pediatric Cardiologist</p>
+                        <p class="experience">12+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Tue, Thu, Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neurology Doctors -->
+    <section class="department-doctors" data-department="neurology">
+        <div class="container">
+            <h2 class="department-title">
+                <i class="fas fa-brain"></i>
+                Neurology Specialists
+            </h2>
+            <div class="doctors-grid">
+                <div class="doctor-card" data-availability="monday,tuesday,thursday">
+                    <div class="doctor-image">
+                        <img src="robert.jpg" alt="Dr. Robert Kim">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Robert Kim</h3>
+                        <p class="specialization">Neurologist</p>
+                        <p class="experience">18+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon, Tue, Thu</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="tuesday,wednesday,friday">
+                    <div class="doctor-image">
+                        <img src="lisa.jpg" alt="Dr. Lisa Thompson">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Lisa Thompson</h3>
+                        <p class="specialization">Neurosurgeon</p>
+                        <p class="experience">16+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★☆</span>
+                            <span>(4.8/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Tue, Wed, Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="monday,wednesday,friday">
+                    <div class="doctor-image">
+                        <img src="david.jpg" alt="Dr. David Wilson">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. David Wilson</h3>
+                        <p class="specialization">Epileptologist</p>
+                        <p class="experience">13+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★☆</span>
+                            <span>(4.7/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon, Wed, Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radiology Doctors -->
+    <section class="department-doctors alt-section" data-department="radiology">
+        <div class="container">
+            <h2 class="department-title">
+                <i class="fas fa-x-ray"></i>
+                Radiology Specialists
+            </h2>
+            <div class="doctors-grid">
+                <div class="doctor-card" data-availability="monday,tuesday,wednesday,thursday">
+                    <div class="doctor-image">
+                        <img src="amanda.jpg" alt="Dr. Amanda Lee">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Amanda Lee</h3>
+                        <p class="specialization">Radiologist</p>
+                        <p class="experience">11+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon-Thu</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="wednesday,thursday,friday">
+                    <div class="doctor-image">
+                        <img src="park.jpg" alt="Dr. David Park">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. David Park</h3>
+                        <p class="specialization">Interventional Radiologist</p>
+                        <p class="experience">13+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★☆</span>
+                            <span>(4.7/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Wed-Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-availability="monday,wednesday,friday">
+                    <div class="doctor-image">
+                        <img src="s johnson.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="specialization">Breast Imaging Specialist</p>
+                        <p class="experience">9+ years experience</p>
+                        <div class="rating">
+                            <span class="star">★★★★★</span>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="availability">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Available: Mon, Wed, Fri</span>
+                        </div>
+                        <a href="appointments.html" class="btn-book">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo.png" width="50px" height="50px">
+                        <h2>MediCare Plus</h2>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointments.html">Appointments</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Radiology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicareplus.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8am-8pm, Sat: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Plus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        function filterDoctors() {
+            const dayFilter = document.getElementById('day-filter').value;
+            const departmentFilter = document.getElementById('department-filter').value;
+            const doctorCards = document.querySelectorAll('.doctor-card');
+            const departments = document.querySelectorAll('.department-doctors');
+
+            let hasVisibleDoctors = false;
+
+            // First, show all doctors and departments
+            doctorCards.forEach(card => {
+                card.style.display = 'block';
+            });
+            departments.forEach(dept => {
+                dept.style.display = 'block';
+            });
+
+            // Apply day filter
+            if (dayFilter !== 'all') {
+                doctorCards.forEach(card => {
+                    const availability = card.getAttribute('data-availability');
+                    if (!availability.includes(dayFilter)) {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Apply department filter
+            if (departmentFilter !== 'all') {
+                departments.forEach(dept => {
+                    const department = dept.getAttribute('data-department');
+                    if (department !== departmentFilter) {
+                        dept.style.display = 'none';
+                    }
+                });
+            }
+
+            // If both filters are active, we need to handle the combination
+            if (dayFilter !== 'all' && departmentFilter !== 'all') {
+                departments.forEach(dept => {
+                    const department = dept.getAttribute('data-department');
+                    if (department === departmentFilter) {
+                        const cardsInDept = dept.querySelectorAll('.doctor-card');
+                        let hasVisibleCards = false;
+                        
+                        cardsInDept.forEach(card => {
+                            if (card.style.display !== 'none') {
+                                hasVisibleCards = true;
+                            }
+                        });
+                        
+                        if (!hasVisibleCards) {
+                            dept.style.display = 'none';
+                        }
+                    }
+                });
+            }
+
+            // Hide empty departments when only day filter is active
+            if (dayFilter !== 'all' && departmentFilter === 'all') {
+                departments.forEach(dept => {
+                    const visibleCards = dept.querySelectorAll('.doctor-card[style="display: block;"]');
+                    if (visibleCards.length === 0) {
+                        dept.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('day-filter').value = 'all';
+            document.getElementById('department-filter').value = 'all';
+            
+            const doctorCards = document.querySelectorAll('.doctor-card');
+            const departments = document.querySelectorAll('.department-doctors');
+            
+            doctorCards.forEach(card => {
+                card.style.display = 'block';
+            });
+            departments.forEach(dept => {
+                dept.style.display = 'block';
+            });
+        }
+
+        // Add event listeners when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const dayFilter = document.getElementById('day-filter');
+            const departmentFilter = document.getElementById('department-filter');
+            const resetButton = document.getElementById('reset-filters');
+
+            if (dayFilter) {
+                dayFilter.addEventListener('change', filterDoctors);
+            }
+            if (departmentFilter) {
+                departmentFilter.addEventListener('change', filterDoctors);
+            }
+            if (resetButton) {
+                resetButton.addEventListener('click', resetFilters);
+            }
+        });
+    </script>
+</body>
+</html>

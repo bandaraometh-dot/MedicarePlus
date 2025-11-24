@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MediCare Plus</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" width="100px" height="100px">
+                <h1>MediCare Plus</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login active">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Hero Section -->
+    <section class="login-hero">
+        <div class="container">
+            <h1>Welcome Back</h1>
+            <p>Access your MediCare Plus account</p>
+        </div>
+    </section>
+
+    <!-- Role Selection Section -->
+    <section class="role-selection">
+        <div class="container">
+            <div class="role-tabs">
+                <button class="role-tab active" data-role="patient">
+                    <i class="fas fa-user"></i>
+                    <span>Patient Login</span>
+                </button>
+                <button class="role-tab" data-role="doctor">
+                    <i class="fas fa-user-md"></i>
+                    <span>Doctor Login</span>
+                </button>
+                <button class="role-tab" data-role="admin">
+                    <i class="fas fa-cogs"></i>
+                    <span>Admin Login</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Form Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-form-container">
+                    <!-- Patient Login Form -->
+                    <div class="login-form active" id="patient-form">
+                        <h2>Patient Login</h2>
+                        <p class="login-subtitle">Access your personal health records</p>
+                        
+                        <form class="auth-form">
+                            <div class="form-group">
+                                <label for="patient-username">Username</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="patient-username" name="username" placeholder="Enter your username" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="patient-password">Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="patient-password" name="password" placeholder="Enter your password" required>
+                                    <button type="button" class="toggle-password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="remember-patient">
+                                    <span class="checkmark"></span>
+                                    Remember me
+                                </label>
+                                <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn-login-submit">Sign In as Patient</button>
+                        </form>
+                    </div>
+
+                    <!-- Doctor Login Form -->
+                    <div class="login-form" id="doctor-form">
+                        <h2>Doctor Login</h2>
+                        <p class="login-subtitle">Access your medical dashboard</p>
+                        
+                        <form class="auth-form">
+                            <div class="form-group">
+                                <label for="doctor-username">Username</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="doctor-username" name="username" placeholder="Enter your username" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="doctor-password">Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="doctor-password" name="password" placeholder="Enter your password" required>
+                                    <button type="button" class="toggle-password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="remember-doctor">
+                                    <span class="checkmark"></span>
+                                    Remember me
+                                </label>
+                                <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            
+                            <button class="btn-login-submit">Sign In as Doctor</button>
+                        </form>
+                    </div>
+
+                    <!-- Admin Login Form -->
+                    <div class="login-form" id="admin-form">
+                        <h2>Admin Login</h2>
+                        <p class="login-subtitle">Access the administration panel</p>
+                        
+                        <form class="auth-form">
+                            <div class="form-group">
+                                <label for="admin-username">Username</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="admin-username" name="username" placeholder="Enter admin username" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="admin-password">Password</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="admin-password" name="password" placeholder="Enter admin password" required>
+                                    <button type="button" class="toggle-password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="remember-admin">
+                                    <span class="checkmark"></span>
+                                    Remember this device
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn-login-submit">Sign In as Admin</button>
+                        </form>
+                    </div>
+                    
+                    <div class="login-footer">
+                        <p>Don't have an account? <a href="register.html">Register as patient</a></p>
+                    </div>
+                </div>
+                
+                <div class="login-benefits">
+                    <h3>Account Benefits</h3>
+                    <div class="benefits-tabs">
+                        <div class="benefit-content active" id="patient-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>
+                                    <h4>Manage Appointments</h4>
+                                    <p>Schedule, view, and cancel appointments with ease</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-file-medical"></i>
+                                <div>
+                                    <h4>Medical Records</h4>
+                                    <p>Access your complete medical history and test results</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="benefit-content" id="doctor-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-user-injured"></i>
+                                <div>
+                                    <h4>Patient Management</h4>
+                                    <p>Access and manage your patient records efficiently</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-calendar-plus"></i>
+                                <div>
+                                    <h4>Schedule Management</h4>
+                                    <p>Manage your appointment schedule and availability</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="benefit-content" id="admin-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-users-cog"></i>
+                                <div>
+                                    <h4>User Management</h4>
+                                    <p>Manage all user accounts and permissions</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-clinic-medical"></i>
+                                <div>
+                                    <h4>System Configuration</h4>
+                                    <p>Configure hospital settings and system parameters</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo.png" width="50px" height="50px">
+                        <h2>MediCare Plus</h2>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointments.html">Appointments</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Radiology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicareplus.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8am-8pm, Sat: 9am-5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Plus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Role tabs functionality
+            const roleTabs = document.querySelectorAll('.role-tab');
+            const loginForms = document.querySelectorAll('.login-form');
+            const benefitContents = document.querySelectorAll('.benefit-content');
+            
+            roleTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const role = this.getAttribute('data-role');
+                    
+                    // Remove active class from all tabs
+                    roleTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all login forms
+                    loginForms.forEach(form => form.classList.remove('active'));
+                    // Show selected login form
+                    document.getElementById(`${role}-form`).classList.add('active');
+                    
+                    // Hide all benefit contents
+                    benefitContents.forEach(content => content.classList.remove('active'));
+                    // Show selected benefit content
+                    document.getElementById(`${role}-benefits`).classList.add('active');
+                });
+            });
+            
+            // Password visibility toggle
+            const toggleButtons = document.querySelectorAll('.toggle-password');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const passwordInput = this.parentElement.querySelector('input');
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    
+                    // Toggle eye icon
+                    const eyeIcon = this.querySelector('i');
+                    if (type === 'password') {
+                        eyeIcon.classList.remove('fa-eye-slash');
+                        eyeIcon.classList.add('fa-eye');
+                    } else {
+                        eyeIcon.classList.remove('fa-eye');
+                        eyeIcon.classList.add('fa-eye-slash');
+                    }
+                });
+            });
+            
+            // Form submission handlers
+            const authForms = document.querySelectorAll('.auth-form');
+            
+            authForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const role = this.closest('.login-form').id.replace('-form', '');
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // In a real application, you would send this to your backend
+                    console.log(`Login attempt as ${role}:`, data);
+                    
+                    // Show success message
+                    alert(`Login successful as ${role}! Redirecting to dashboard...`);
+                    //window.location.href="admin-dashboard.html";
+                    
+                    // In a real application, you would redirect to the appropriate dashboard
+                     window.location.href = `${role}-dashboard.html`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

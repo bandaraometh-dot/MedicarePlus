@@ -1,0 +1,587 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: #2a7de1;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #2a7de1;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: #2a7de1;
+}
+
+nav a.active {
+    color: #2a7de1;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2a7de1;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-login, .btn-register {
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-login {
+    color: #2a7de1;
+    border: 1px solid #2a7de1;
+}
+
+.btn-login:hover {
+    background-color: #2a7de1;
+    color: white;
+}
+
+.btn-register {
+    background-color: #2a7de1;
+    color: white;
+}
+
+.btn-register:hover {
+    background-color: #1e6ac7;
+}
+
+/* Doctors Hero Section */
+.doctors-hero {
+    background: linear-gradient(135deg, #2a7de1 0%, #1e6ac7 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.doctors-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.doctors-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Filter Section */
+.filter-section {
+    background: white;
+    padding: 30px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filter-container {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.filter-container h3 {
+    margin-bottom: 20px;
+    color: #2a7de1;
+    font-size: 1.3rem;
+}
+
+.filter-options {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s;
+    min-width: 180px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #2a7de1;
+}
+
+.filter-reset {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-reset:hover {
+    background: #5a6268;
+}
+
+/* Department Sections */
+.department-doctors {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.alt-section {
+    background-color: #f0f7ff;
+}
+
+.department-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #2a7de1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.department-title i {
+    font-size: 2rem;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* FIXED Doctor Image Styles */
+.doctor-image {
+    height: 280px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e1efff 100%);
+}
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-image img {
+    transform: scale(1.05);
+}
+
+/* Force consistent image display */
+.doctor-image img[src] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fallback for broken/missing images */
+.doctor-image img:not([src]),
+.doctor-image img[src=""],
+.doctor-image img[src*="undefined"],
+.doctor-image img[src*="null"] {
+    display: none !important;
+}
+
+.doctor-image:not(:has(img[src]))::after,
+.doctor-image:has(img:not([src]))::after,
+.doctor-image:has(img[src=""])::after,
+.doctor-image:has(img[src*="undefined"])::after,
+.doctor-image:has(img[src*="null"])::after {
+    content: "👨‍⚕️";
+    font-size: 3.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Hide fallback when valid image is present */
+.doctor-image:has(img[src]:not([src=""]):not([src*="undefined"]):not([src*="null"]))::after {
+    display: none;
+}
+
+.doctor-info {
+    padding: 30px;
+}
+
+.doctor-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.specialization {
+    color: #2a7de1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.experience {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.rating .star {
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+.rating span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #2a7de1;
+}
+
+.availability i {
+    color: #2a7de1;
+    font-size: 1rem;
+}
+
+.availability span {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-book {
+    background: linear-gradient(135deg, #2a7de1 0%, #1e6ac7 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 125, 225, 0.3);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section .logo {
+    margin-bottom: 20px;
+}
+
+.footer-section .logo i {
+    color: #2a7de1;
+}
+
+.footer-section .logo h2 {
+    color: white;
+}
+
+.footer-section p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #2a7de1;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.contact-info i {
+    color: #2a7de1;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding: 20px 0;
+    text-align: center;
+    color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    .doctors-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .doctors-hero {
+        padding: 60px 0;
+    }
+    
+    .doctors-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .doctors-hero p {
+        font-size: 1rem;
+    }
+    
+    .department-title {
+        font-size: 1.8rem;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .doctor-info {
+        padding: 25px;
+    }
+    
+    .department-doctors {
+        padding: 60px 0;
+    }
+    
+    .doctor-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .btn-login, .btn-register {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .department-title {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .doctor-image {
+        height: 220px;
+    }
+    
+    .filter-container {
+        padding: 20px;
+    }
+    
+    .doctor-info {
+        padding: 20px;
+    }
+}
+
+/* Additional fixes for image consistency */
+.doctor-image {
+    min-height: 280px;
+}
+
+.doctor-image img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* Ensure all images have the same treatment */
+.doctor-card .doctor-image {
+    background: #f8f9fa;
+}
+
+.doctor-card .doctor-image img {
+    background: white;
+}
