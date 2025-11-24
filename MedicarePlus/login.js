@@ -45,54 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Form submission handlers
-    const authForms = document.querySelectorAll('.auth-form');
-    
-    authForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const role = this.closest('.login-form').id.replace('-form', '');
-            
-            // Get form data
-            const formData = new FormData(this);
-            const username = formData.get('username');
-            const password = formData.get('password');
-            
-            // Simple authentication (in real app, this would be server-side)
-            if (authenticateUser(username, password, role)) {
-                // Store user session
-                localStorage.setItem('currentUser', JSON.stringify({
-                    username: username,
-                    role: role,
-                    loginTime: new Date().toISOString()
-                }));
-                
-                // Redirect to appropriate dashboard
-                window.location.href = `${role}-dashboard.html`;
-            } else {
-                alert('Invalid credentials! Please try again.');
-            }
-        });
-    });
-    
-    // Simple authentication function (for demo purposes)
-    function authenticateUser(username, password, role) {
-        // Demo credentials - in real app, this would be server-side
-        const demoUsers = {
-            'admin': { password: 'admin123', role: 'admin' },
-            'doctor1': { password: 'doctor123', role: 'doctor' },
-            'patient1': { password: 'patient123', role: 'patient' }
-        };
-        
-        return demoUsers[username] && 
-               demoUsers[username].password === password && 
-               demoUsers[username].role === role;
-    }
-    
-    // Check if user is already logged in
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser && !window.location.href.includes('dashboard')) {
-        window.location.href = `${currentUser.role}-dashboard.html`;
-    }
+    // Login forms now POST to server; client-side demo auth removed.
 });

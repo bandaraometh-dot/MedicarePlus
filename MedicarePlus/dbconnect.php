@@ -1,7 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
+// For XAMPP default MySQL user is `root` with an empty password. Update as needed.
+$username = "root";
+$password = "";
 $dbname = "MedicarePlus";
 
 // Create connection

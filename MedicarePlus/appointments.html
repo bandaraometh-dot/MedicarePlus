@@ -1,264 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Appointment - MediCare Plus</title>
-    <link rel="stylesheet" href="appointments.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="logo.png">
-
-</head>
-<body>
+    <link rel="stylesheet" href="appointments.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="logo.png" />
+  </head>
+  <body>
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" width="100px" height="100px">
-                <h1>MediCare Plus</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
-                    <li><a href="appointments.html" class="active">Appointments</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-register">Register</a>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <img src="logo.png" width="100px" height="100px" />
+          <h1>MediCare Plus</h1>
         </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="appointments.html" class="active">Appointments</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn-login">Login</a>
+          <a href="register.html" class="btn-register">Register</a>
+        </div>
+      </div>
     </header>
 
     <!-- Appointment Hero Section -->
     <section class="appointment-hero">
-        <div class="container">
-            <h1>Book Your Appointment</h1>
-            <p>Schedule your visit with our expert medical professionals quickly and easily</p>
-        </div>
+      <div class="container">
+        <h1>Book Your Appointment</h1>
+        <p>
+          Schedule your visit with our expert medical professionals quickly and
+          easily
+        </p>
+      </div>
     </section>
 
     <!-- Appointment Form Section -->
     <section class="appointment-form-section">
-        <div class="container">
-            <div class="form-container">
-                <h2>Schedule Your Visit</h2>
-                <p class="form-subtitle">Fill out the form below to book your appointment</p>
-                
-                <form class="appointment-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="full-name">Full Name</label>
-                            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of Birth</label>
-                            <input type="date" id="dob" name="dob" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="department">Medical Department</label>
-                            <select id="department" name="department" required>
-                                <option value="">Select Department</option>
-                                <option value="cardiology">Cardiology</option>
-                                <option value="pediatrics">Pediatrics</option>
-                                <option value="neurology">Neurology</option>
-                                <option value="radiology">Radiology</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="doctor">Preferred Doctor</label>
-                            <select id="doctor" name="doctor" required>
-                                <option value="">Select Doctor</option>
-                                <option value="dr-smith">Dr. Sarah Smith</option>
-                                <option value="dr-johnson">Dr. Michael Johnson</option>
-                                <option value="dr-williams">Dr. Emily Williams</option>
-                                <option value="dr-brown">Dr. James Brown</option>
-                                <option value="dr-davis">Dr. Jennifer Davis</option>
-                                <option value="dr-miller">Dr. Robert Miller</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="appointment-date">Preferred Date</label>
-                            <input type="date" id="appointment-date" name="appointment-date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="appointment-time">Preferred Time</label>
-                            <select id="appointment-time" name="appointment-time" required>
-                                <option value="">Select Time</option>
-                                <option value="09:00">09:00 AM</option>
-                                <option value="09:30">09:30 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="10:30">10:30 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="11:30">11:30 AM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="14:30">02:30 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="15:30">03:30 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="16:30">04:30 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="reason">Reason for Visit</label>
-                        <textarea id="reason" name="reason" placeholder="Please describe your symptoms or reason for appointment" rows="4"></textarea>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label class="checkbox-container">
-                            <input type="checkbox" required>
-                            <span class="checkmark"></span>
-                            I agree to the <a href="#"> &nbsp;Terms & Conditions&nbsp;</a> and <a href="#">&nbsp;Privacy Policy&nbsp;</a>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">Book Appointment</button>
-                </form>
+      <div class="container">
+        <div class="form-container">
+          <h2>Schedule Your Visit</h2>
+          <p class="form-subtitle">
+            Fill out the form below to book your appointment
+          </p>
+
+          <form
+            class="appointment-form"
+            action="appointments.php"
+            method="POST"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full_name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
             </div>
-            
-            <div class="appointment-info">
-                <h3>Why Book With Us?</h3>
-                <div class="info-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h4>Flexible Scheduling</h4>
-                        <p>Choose appointment times that work best for your schedule</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-user-md"></i>
-                    <div>
-                        <h4>Expert Doctors</h4>
-                        <p>Consult with board-certified medical professionals</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-calendar-check"></i>
-                    <div>
-                        <h4>Quick Confirmation</h4>
-                        <p>Receive instant confirmation of your appointment</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-bell"></i>
-                    <div>
-                        <h4>Reminder Alerts</h4>
-                        <p>Get SMS and email reminders before your appointment</p>
-                    </div>
-                </div>
-                
-                <div class="contact-info">
-                    <h3>Need Immediate Help?</h3>
-                    <p>Call us directly to speak with our staff</p>
-                    <div class="phone-number">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (555) 123-4567</span>
-                    </div>
-                    <p class="hours">Available Mon-Fri: 8am-8pm, Sat: 9am-5pm</p>
-                </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required />
+              </div>
             </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="department">Medical Department</label>
+                <select id="department" name="department" required>
+                  <option value="">Select Department</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="pediatrics">Pediatrics</option>
+                  <option value="neurology">Neurology</option>
+                  <option value="radiology">Radiology</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="doctor">Preferred Doctor</label>
+                <select id="doctor" name="doctor" required>
+                  <option value="">Select Doctor</option>
+                  <option value="dr-smith">Dr. Sarah Smith</option>
+                  <option value="dr-johnson">Dr. Michael Johnson</option>
+                  <option value="dr-williams">Dr. Emily Williams</option>
+                  <option value="dr-brown">Dr. James Brown</option>
+                  <option value="dr-davis">Dr. Jennifer Davis</option>
+                  <option value="dr-miller">Dr. Robert Miller</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="appointment-date">Preferred Date</label>
+                <input
+                  type="date"
+                  id="appointment-date"
+                  name="appointment_date"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="appointment-time">Preferred Time</label>
+                <select id="appointment-time" name="appointment_time" required>
+                  <option value="">Select Time</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="09:30">09:30 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="14:30">02:30 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="15:30">03:30 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="16:30">04:30 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="reason">Reason for Visit</label>
+              <textarea
+                id="reason"
+                name="reason"
+                placeholder="Please describe your symptoms or reason for appointment"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="checkbox-container">
+                <input type="checkbox" required />
+                <span class="checkmark"></span>
+                I agree to the
+                <a href="#"> &nbsp;Terms & Conditions&nbsp;</a> and
+                <a href="#">&nbsp;Privacy Policy&nbsp;</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Book Appointment</button>
+          </form>
         </div>
+
+        <div class="appointment-info">
+          <h3>Why Book With Us?</h3>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Flexible Scheduling</h4>
+              <p>Choose appointment times that work best for your schedule</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-user-md"></i>
+            <div>
+              <h4>Expert Doctors</h4>
+              <p>Consult with board-certified medical professionals</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-calendar-check"></i>
+            <div>
+              <h4>Quick Confirmation</h4>
+              <p>Receive instant confirmation of your appointment</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-bell"></i>
+            <div>
+              <h4>Reminder Alerts</h4>
+              <p>Get SMS and email reminders before your appointment</p>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h3>Need Immediate Help?</h3>
+            <p>Call us directly to speak with our staff</p>
+            <div class="phone-number">
+              <i class="fas fa-phone"></i>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <p class="hours">Available Mon-Fri: 8am-8pm, Sat: 9am-5pm</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <img src="logo.png" width="50px" height="50px">
-                        <h2>MediCare Plus</h2>
-                    </div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="doctors.html">Doctors</a></li>
-                        <li><a href="appointments.html">Appointments</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html">Cardiology</a></li>
-                        <li><a href="services.html">Pediatrics</a></li>
-                        <li><a href="services.html">Neurology</a></li>
-                        <li><a href="services.html">Radiology</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@medicareplus.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 8am-8pm, Sat: 9am-5pm</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo">
+              <img src="logo.png" width="50px" height="50px" />
+              <h2>MediCare Plus</h2>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 MediCare Plus. All rights reserved.</p>
-            </div>
+            <p>
+              Providing quality healthcare services with compassion and
+              excellence since 2010.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="appointments.html">Appointments</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html">Cardiology</a></li>
+              <li><a href="services.html">Pediatrics</a></li>
+              <li><a href="services.html">Neurology</a></li>
+              <li><a href="services.html">Radiology</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical
+                City
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> info@medicareplus.com</li>
+              <li>
+                <i class="fas fa-clock"></i> Mon-Fri: 8am-8pm, Sat: 9am-5pm
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 MediCare Plus. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Simple form validation and date restrictions
-        document.addEventListener('DOMContentLoaded', function() {
-            const appointmentDate = document.getElementById('appointment-date');
-            const today = new Date();
-            const minDate = new Date();
-            minDate.setDate(today.getDate() + 1); // Tomorrow
-            const maxDate = new Date();
-            maxDate.setMonth(today.getMonth() + 3); // 3 months from now
-            
-            // Format dates for input
-            const formatDate = (date) => {
-                return date.toISOString().split('T')[0];
-            };
-            
-            // Set min and max dates
-            appointmentDate.min = formatDate(minDate);
-            appointmentDate.max = formatDate(maxDate);
-            
-            // Set placeholder to tomorrow's date
-            appointmentDate.placeholder = formatDate(minDate);
-            
-            // Form submission
-            const form = document.querySelector('.appointment-form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you! Your appointment request has been submitted. We will contact you shortly to confirm.');
-                form.reset();
-            });
+      // Simple form validation and date restrictions
+      document.addEventListener("DOMContentLoaded", function () {
+        const appointmentDate = document.getElementById("appointment-date");
+        const today = new Date();
+        const minDate = new Date();
+        minDate.setDate(today.getDate() + 1); // Tomorrow
+        const maxDate = new Date();
+        maxDate.setMonth(today.getMonth() + 3); // 3 months from now
+
+        // Format dates for input
+        const formatDate = (date) => {
+          return date.toISOString().split("T")[0];
+        };
+
+        // Set min and max dates
+        appointmentDate.min = formatDate(minDate);
+        appointmentDate.max = formatDate(maxDate);
+
+        // Set placeholder to tomorrow's date
+        appointmentDate.placeholder = formatDate(minDate);
+
+        // Form submission: allow server to handle booking
+        const form = document.querySelector(".appointment-form");
+        form.addEventListener("submit", function (e) {
+          // Let the form submit to `appointments.php` (method POST)
+          // You can optionally show a confirmation client-side, but submission will continue
         });
+      });
     </script>
-</body>
+  </body>
 </html>
