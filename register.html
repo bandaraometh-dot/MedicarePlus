@@ -305,6 +305,15 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // If the page was loaded with ?registered=1 redirect to patient dashboard.
+        // Note: this is a client-side convenience. If the user is not authenticated
+        // the dashboard may prompt for login — adjust server-side flow if needed.
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("registered") === "1") {
+          window.location.href = "patient-dashboard.html";
+          return;
+        }
+
         const form = document.getElementById("patient-register-form");
         const password = document.getElementById("password");
         const confirmPassword = document.getElementById("confirm-password");

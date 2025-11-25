@@ -179,7 +179,9 @@
                   >
                 </div>
 
-                <button class="btn-login-submit">Sign In as Doctor</button>
+                <button type="submit" class="btn-login-submit">
+                  Sign In as Doctor
+                </button>
               </form>
             </div>
 
@@ -413,7 +415,24 @@
           });
         });
 
-        // Login forms submit directly to server endpoints (`login.php`) via POST.
+        // Ensure each form submits with the correct role query parameter.
+        const authForms = document.querySelectorAll(".auth-form");
+        authForms.forEach((form) => {
+          form.addEventListener("submit", function (e) {
+            // If form.action already contains ?role= it's fine; otherwise set based on visible form id
+            if (!/role=/.test(form.action)) {
+              // derive role from form action id or parent form container
+              const parent = form.closest(".login-form");
+              if (parent) {
+                const id = parent.id || "";
+                // id is like 'patient-form', 'doctor-form', 'admin-form'
+                const role = id.replace("-form", "");
+                form.action = `login.php?role=${role}`;
+              }
+            }
+            // allow normal submit to proceed
+          });
+        });
       });
     </script>
   </body>
