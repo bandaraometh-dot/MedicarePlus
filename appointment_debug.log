@@ -1,0 +1,28 @@
+--- New Request ---
+POST data: Array
+(
+    [full_name] => 12132
+    [email] => 123@123.com
+    [phone] => 123
+    [dob] => 1111-11-11
+    [department] => cardiology
+    [doctor] => 1
+    [appointment_date] => 2025-12-30
+    [appointment_time] => 16:00
+    [reason] => 1234
+)
+
+--- New Request ---
+POST data: Array
+(
+    [full_name] => 111
+    [email] => 111@1212.com
+    [phone] => 1111
+    [dob] => 1111-11-11
+    [department] => cardiology
+    [doctor] => 8
+    [appointment_date] => 2025-12-23
+    [appointment_time] => 16:00
+    [reason] => 111
+)
+

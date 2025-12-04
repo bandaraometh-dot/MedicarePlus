@@ -42,9 +42,20 @@ $role = 'patient';
 $stmt = $conn->prepare('INSERT INTO users (first_name, last_name, username, email, password, phone, dob, address, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 $stmt->bind_param('sssssssss', $first_name, $last_name, $username, $email, $password_hash, $phone, $dob, $address, $role);
 $ok = $stmt->execute();
+$new_user_id = $stmt->insert_id;
 $stmt->close();
 
 if ($ok) {
+    // Create patient record automatically
+    if ($role === 'patient') {
+        $medical_id = 'MID' . date('Y') . rand(1000, 9999);
+        // We use the same DOB from users table
+        $stmt_p = $conn->prepare("INSERT INTO patients (user_id, dob, medical_id) VALUES (?, ?, ?)");
+        $stmt_p->bind_param("iss", $new_user_id, $dob, $medical_id);
+        $stmt_p->execute();
+        $stmt_p->close();
+    }
+
     redirect('login.html?registered=1');
 } else {
     redirect('register.html?error=server');

@@ -1,173 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Dashboard - MediCare Plus</title>
-    <link rel="stylesheet" href="patient-dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="patient-dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Header -->
     <header class="patient-header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" width="100px" height="100px">
-                <h1>MediCare Plus</h1>
-            </div>
-            <nav class="patient-nav">
-                <ul>
-                    <li class="active"><a href="#">Dashboard</a></li>
-                    <li><a href="#">Appointments</a></li>
-                    <li><a href="#">Doctors</a></li>
-                    <li><a href="#">Medical Records</a></li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Messages</a></li>
-                </ul>
-            </nav>
-            <div class="patient-actions">
-                <div class="notification">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge">2</span>
-                </div>
-                <div class="user-menu">
-                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=2a7de1&color=fff" alt="Patient">
-                    <span>John Doe</span>
-                    <button class="btn-logout" id="logout-btn">Logout</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <img src="logo.png" width="50px" height="50px" />
+          <h1>MediCarePlus</h1>
         </div>
+        <nav class="patient-nav">
+          <ul>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Appointments</a></li>
+            <li><a href="#">Doctors</a></li>
+            <li><a href="#">Medical Records</a></li>
+            <li><a href="#">Prescriptions</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+        </nav>
+        <div class="patient-actions">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            <span class="badge">2</span>
+          </div>
+          <div class="user-menu">
+            <img
+              src="https://ui-avatars.com/api/?name=John+Doe&background=2a7de1&color=fff"
+              alt="Patient"
+            />
+            <span>John Doe</span>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="patient-main">
-        <div class="container">
-            <!-- Welcome Section -->
-            <section class="welcome-section">
-                <h2>Welcome back, John!</h2>
-                <p>Here's your health overview and upcoming appointments</p>
-            </section>
+      <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <h2>Welcome back, John!</h2>
+          <p>Here's your health overview and upcoming appointments</p>
+        </section>
 
-            <!-- Upcoming Appointments -->
-            <section class="appointments-section">
-                <div class="section-header">
-                    <h3>Upcoming Appointments</h3>
-                    <button class="btn-primary">Book New Appointment</button>
+        <!-- Upcoming Appointments -->
+        <section class="appointments-section">
+          <div class="section-header">
+            <h3>Upcoming Appointments</h3>
+            <button class="btn-primary">Book New Appointment</button>
+          </div>
+          <div class="appointments-grid">
+            <div class="appointment-card">
+              <div class="appointment-info">
+                <div class="doctor-avatar">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Dr+Sarah+Smith&background=2a7de1&color=fff"
+                    alt="Doctor"
+                  />
                 </div>
-                <div class="appointments-grid">
-                    <div class="appointment-card">
-                        <div class="appointment-info">
-                            <div class="doctor-avatar">
-                                <img src="https://ui-avatars.com/api/?name=Dr+Sarah+Smith&background=2a7de1&color=fff" alt="Doctor">
-                            </div>
-                            <div class="appointment-details">
-                                <h4>Dr. Sarah Smith</h4>
-                                <p>Cardiology Consultation</p>
-                                <span class="appointment-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Tomorrow, 10:00 AM
-                                </span>
-                            </div>
-                        </div>
-                        <div class="appointment-actions">
-                            <button class="btn-secondary">Reschedule</button>
-                            <button class="btn-danger">Cancel</button>
-                        </div>
-                    </div>
+                <div class="appointment-details">
+                  <h4>Dr. Sarah Smith</h4>
+                  <p>Cardiology Consultation</p>
+                  <span class="appointment-date">
+                    <i class="fas fa-calendar"></i>
+                    Tomorrow, 10:00 AM
+                  </span>
+                  <div style="margin-top: 8px">
+                    <span class="status pending">Pending</span>
+                  </div>
+                </div>
+              </div>
+              <div class="appointment-actions">
+                <button class="btn-secondary">Reschedule</button>
+                <button class="btn-danger">Cancel</button>
+              </div>
+            </div>
 
-                    <div class="appointment-card">
-                        <div class="appointment-info">
-                            <div class="doctor-avatar">
-                                <img src="https://ui-avatars.com/api/?name=Dr+Mike+Johnson&background=2a7de1&color=fff" alt="Doctor">
-                            </div>
-                            <div class="appointment-details">
-                                <h4>Dr. Mike Johnson</h4>
-                                <p>Regular Checkup</p>
-                                <span class="appointment-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Dec 15, 2024, 02:30 PM
-                                </span>
-                            </div>
-                        </div>
-                        <div class="appointment-actions">
-                            <button class="btn-secondary">Reschedule</button>
-                            <button class="btn-danger">Cancel</button>
-                        </div>
-                    </div>
+            <div class="appointment-card">
+              <div class="appointment-info">
+                <div class="doctor-avatar">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Dr+Mike+Johnson&background=2a7de1&color=fff"
+                    alt="Doctor"
+                  />
                 </div>
-            </section>
+                <div class="appointment-details">
+                  <h4>Dr. Mike Johnson</h4>
+                  <p>Regular Checkup</p>
+                  <span class="appointment-date">
+                    <i class="fas fa-calendar"></i>
+                    Dec 15, 2024, 02:30 PM
+                  </span>
+                  <div style="margin-top: 8px">
+                    <span class="status confirmed">Confirmed</span>
+                  </div>
+                </div>
+              </div>
+              <div class="appointment-actions">
+                <button class="btn-secondary">Reschedule</button>
+                <button class="btn-danger">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Quick Actions -->
-            <section class="quick-actions-section">
-                <h3>Quick Actions</h3>
-                <div class="actions-grid">
-                    <div class="action-card">
-                        <i class="fas fa-search"></i>
-                        <h4>Find Doctors</h4>
-                        <p>Search and book appointments with specialists</p>
-                        <button class="btn-action">Explore</button>
-                    </div>
-                    <div class="action-card">
-                        <i class="fas fa-file-medical"></i>
-                        <h4>Medical Records</h4>
-                        <p>View your test results and medical history</p>
-                        <button class="btn-action">View</button>
-                    </div>
-                    <div class="action-card">
-                        <i class="fas fa-prescription"></i>
-                        <h4>Prescriptions</h4>
-                        <p>Access your current and past prescriptions</p>
-                        <button class="btn-action">Check</button>
-                    </div>
-                    <div class="action-card">
-                        <i class="fas fa-comments"></i>
-                        <h4>Messages</h4>
-                        <p>Communicate with your healthcare providers</p>
-                        <button class="btn-action">Open</button>
-                    </div>
-                </div>
-            </section>
+        <!-- Quick Actions -->
+        <section class="quick-actions-section">
+          <h3>Quick Actions</h3>
+          <div class="actions-grid">
+            <div class="action-card">
+              <i class="fas fa-search"></i>
+              <h4>Find Doctors</h4>
+              <p>Search and book appointments with specialists</p>
+              <button class="btn-action">Explore</button>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-file-medical"></i>
+              <h4>Medical Records</h4>
+              <p>View your test results and medical history</p>
+              <button class="btn-action">View</button>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-prescription"></i>
+              <h4>Prescriptions</h4>
+              <p>Access your current and past prescriptions</p>
+              <button class="btn-action">Check</button>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-comments"></i>
+              <h4>Messages</h4>
+              <p>Communicate with your healthcare providers</p>
+              <button class="btn-action">Open</button>
+            </div>
+          </div>
+        </section>
 
-            <!-- Recent Activity -->
-            <section class="recent-activity-section">
-                <h3>Recent Activity</h3>
-                <div class="activity-list">
-                    <div class="activity-item">
-                        <i class="fas fa-calendar-check success"></i>
-                        <div>
-                            <p>Appointment booked with Dr. Sarah Smith</p>
-                            <span>2 days ago</span>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <i class="fas fa-file-medical-alt info"></i>
-                        <div>
-                            <p>Blood test results are available</p>
-                            <span>1 week ago</span>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <i class="fas fa-prescription warning"></i>
-                        <div>
-                            <p>New prescription from Dr. Mike Johnson</p>
-                            <span>2 weeks ago</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- Recent Activity -->
+        <section class="recent-activity-section">
+          <h3>Recent Activity</h3>
+          <div class="activity-list">
+            <div class="activity-item">
+              <i class="fas fa-calendar-check success"></i>
+              <div>
+                <p>Appointment booked with Dr. Sarah Smith</p>
+                <span>2 days ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="fas fa-file-medical-alt info"></i>
+              <div>
+                <p>Blood test results are available</p>
+                <span>1 week ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="fas fa-prescription warning"></i>
+              <div>
+                <p>New prescription from Dr. Mike Johnson</p>
+                <span>2 weeks ago</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Logout functionality
-            document.getElementById('logout-btn').addEventListener('click', function() {
-                localStorage.removeItem('currentUser');
-                window.location.href = 'login.html';
-            });
-
-            
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Logout functionality
+        document
+          .getElementById("logout-btn")
+          .addEventListener("click", function () {
+            localStorage.removeItem("currentUser");
+            window.location.href = "login.html";
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

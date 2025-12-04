@@ -1,0 +1,194 @@
+[2025-11-27 15:22:39] Login attempt: identifier=gaten, requested_role=doctor
+[2025-11-27 15:22:39] User found: id=5, db_role=doctor
+[2025-11-27 15:23:23] Login attempt: identifier=invisi, requested_role=doctor
+[2025-11-27 15:23:23] User found: id=3, db_role=doctor
+[2025-11-27 15:23:41] Login attempt: identifier=faf, requested_role=patient
+[2025-11-27 15:23:41] User found: id=1, db_role=patient
+[2025-11-27 15:28:25] Login attempt: identifier=robert, requested_role=admin
+[2025-11-27 15:28:25] User found: id=2, db_role=admin
+[2025-11-27 15:29:32] Login attempt: identifier=tim, requested_role=patient
+[2025-11-27 15:29:32] User found: id=6, db_role=patient
+[2025-11-27 15:30:16] Login attempt: identifier=tim, requested_role=doctor
+[2025-11-27 15:30:16] User found: id=6, db_role=doctor
+[2025-11-27 15:32:52] Login attempt: identifier=tim, requested_role=doctor
+[2025-11-27 15:32:52] User found: id=6, db_role=doctor
+[2025-11-27 15:32:52] Password verified for id=6
+[2025-11-27 15:32:52] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-27 15:32:52] Redirecting to doctor-dashboard.php
+[2025-11-27 15:33:28] Login attempt: identifier=tim, requested_role=patient
+[2025-11-27 15:33:28] User found: id=6, db_role=patient
+[2025-11-27 15:33:28] Password verified for id=6
+[2025-11-27 15:33:28] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-27 15:33:28] Redirecting to patient-dashboard.php
+[2025-11-27 15:43:03] Login attempt: identifier=tim, requested_role=patient
+[2025-11-27 15:43:03] User found: id=6, db_role=patient
+[2025-11-27 15:43:03] Password verified for id=6
+[2025-11-27 15:43:03] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-27 15:43:03] Redirecting to patient-dashboard.php
+[2025-11-26 19:56:25] Login attempt: identifier=tim, requested_role=doctor
+[2025-11-26 19:56:25] User found: id=6, db_role=patient
+[2025-11-26 19:56:25] Password verified for id=6
+[2025-11-26 19:56:25] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 19:56:25] Redirecting to patient-dashboard.php
+[2025-11-26 20:06:37] Login attempt: identifier=gaten, requested_role=doctor
+[2025-11-26 20:06:37] User found: id=5, db_role=doctor
+[2025-11-26 20:06:37] Password verified for id=5
+[2025-11-26 20:06:37] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:06:37] Redirecting to doctor-dashboard.php
+[2025-11-26 20:09:04] Login attempt: identifier=gaten, requested_role=patient
+[2025-11-26 20:09:04] User found: id=5, db_role=doctor
+[2025-11-26 20:09:04] Password verified for id=5
+[2025-11-26 20:09:04] Role mismatch: requested=patient, db_role=doctor, id=5
+[2025-11-26 20:09:10] Login attempt: identifier=gaten, requested_role=doctor
+[2025-11-26 20:09:10] User found: id=5, db_role=doctor
+[2025-11-26 20:09:10] Password verified for id=5
+[2025-11-26 20:09:10] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:09:10] Redirecting to doctor-dashboard.php
+[2025-11-26 20:11:34] Login attempt: identifier=robert, requested_role=admin
+[2025-11-26 20:11:34] User found: id=2, db_role=admin
+[2025-11-26 20:11:34] Password verified for id=2
+[2025-11-26 20:11:34] Redirecting to admin-dashboard.php; headers_sent=0
+[2025-11-26 20:12:55] Login attempt: identifier=BB, requested_role=admin
+[2025-11-26 20:12:55] User found: id=7, db_role=patient
+[2025-11-26 20:12:55] Password verified for id=7
+[2025-11-26 20:12:55] Role mismatch: requested=admin, db_role=patient, id=7
+[2025-11-26 20:13:26] Login attempt: identifier=BB, requested_role=admin
+[2025-11-26 20:13:26] User found: id=7, db_role=admin
+[2025-11-26 20:13:26] Password verified for id=7
+[2025-11-26 20:13:26] Redirecting to admin-dashboard.php; headers_sent=0
+[2025-11-26 20:14:12] Login attempt: identifier=BB, requested_role=doctor
+[2025-11-26 20:14:12] User found: id=7, db_role=doctor
+[2025-11-26 20:14:12] Password verified for id=7
+[2025-11-26 20:14:12] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:14:12] Redirecting to doctor-dashboard.php
+[2025-11-26 20:14:25] Login attempt: identifier=faf, requested_role=patient
+[2025-11-26 20:14:25] User found: id=1, db_role=patient
+[2025-11-26 20:14:25] Password verified for id=1
+[2025-11-26 20:14:25] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:14:25] Redirecting to patient-dashboard.php
+[2025-11-26 20:22:48] Login attempt: identifier=BB, requested_role=doctor
+[2025-11-26 20:22:48] User found: id=7, db_role=doctor
+[2025-11-26 20:22:48] Password verified for id=7
+[2025-11-26 20:22:48] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:22:48] Redirecting to doctor-dashboard.php
+[2025-11-26 20:29:38] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 20:29:38] User found: id=6, db_role=patient
+[2025-11-26 20:29:38] Password verified for id=6
+[2025-11-26 20:29:38] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:29:38] Redirecting to patient-dashboard.php
+[2025-11-26 20:39:34] Login attempt: identifier=gaten, requested_role=doctor
+[2025-11-26 20:39:34] User found: id=5, db_role=doctor
+[2025-11-26 20:39:34] Password verified for id=5
+[2025-11-26 20:39:34] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:39:34] Redirecting to doctor-dashboard.php
+[2025-11-26 20:42:19] Login attempt: identifier=robert, requested_role=patient
+[2025-11-26 20:42:19] User found: id=2, db_role=admin
+[2025-11-26 20:42:19] Password verified for id=2
+[2025-11-26 20:42:19] Role mismatch: requested=patient, db_role=admin, id=2
+[2025-11-26 20:42:34] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 20:42:34] User found: id=6, db_role=patient
+[2025-11-26 20:42:34] Password verified for id=6
+[2025-11-26 20:42:34] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:42:34] Redirecting to patient-dashboard.php
+[2025-11-26 20:55:19] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 20:55:19] User found: id=6, db_role=patient
+[2025-11-26 20:55:19] Password verified for id=6
+[2025-11-26 20:55:19] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 20:55:19] Redirecting to patient-dashboard.php
+[2025-11-26 21:18:14] Login attempt: identifier=invisi, requested_role=doctor
+[2025-11-26 21:18:14] User found: id=3, db_role=doctor
+[2025-11-26 21:18:14] Password verified for id=3
+[2025-11-26 21:18:14] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:18:14] Redirecting to doctor-dashboard.php
+[2025-11-26 21:18:36] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:18:36] User found: id=6, db_role=patient
+[2025-11-26 21:18:36] Password verified for id=6
+[2025-11-26 21:18:36] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:18:36] Redirecting to patient-dashboard.php
+[2025-11-26 21:21:46] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:21:46] User found: id=6, db_role=patient
+[2025-11-26 21:21:46] Password verified for id=6
+[2025-11-26 21:21:46] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:21:46] Redirecting to patient-dashboard.php
+[2025-11-26 21:25:48] Login attempt: identifier=BB, requested_role=admin
+[2025-11-26 21:25:48] User found: id=7, db_role=doctor
+[2025-11-26 21:25:48] Password verified for id=7
+[2025-11-26 21:25:48] Role mismatch: requested=admin, db_role=doctor, id=7
+[2025-11-26 21:26:03] Login attempt: identifier=robert, requested_role=admin
+[2025-11-26 21:26:03] User found: id=2, db_role=admin
+[2025-11-26 21:26:03] Password verified for id=2
+[2025-11-26 21:26:03] Redirecting to admin-dashboard.php; headers_sent=0
+[2025-11-26 21:29:16] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:29:16] User found: id=6, db_role=patient
+[2025-11-26 21:29:17] Password verified for id=6
+[2025-11-26 21:29:17] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:29:17] Redirecting to patient-dashboard.php
+[2025-11-26 21:31:07] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:31:07] User found: id=6, db_role=patient
+[2025-11-26 21:31:07] Password verified for id=6
+[2025-11-26 21:31:07] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:31:07] Redirecting to patient-dashboard.php
+[2025-11-26 21:36:37] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:36:37] User found: id=6, db_role=patient
+[2025-11-26 21:36:48] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:36:48] User found: id=6, db_role=patient
+[2025-11-26 21:36:49] Password verified for id=6
+[2025-11-26 21:36:49] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:36:49] Redirecting to patient-dashboard.php
+[2025-11-26 21:41:48] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:41:48] User found: id=6, db_role=patient
+[2025-11-26 21:41:48] Password verified for id=6
+[2025-11-26 21:41:48] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:41:48] Redirecting to patient-dashboard.php
+[2025-11-26 21:44:30] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:44:30] User found: id=6, db_role=patient
+[2025-11-26 21:44:31] Password verified for id=6
+[2025-11-26 21:44:31] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:44:31] Redirecting to patient-dashboard.php
+[2025-11-26 21:46:19] Login attempt: identifier=tim, requested_role=patient
+[2025-11-26 21:46:19] User found: id=6, db_role=patient
+[2025-11-26 21:46:19] Password verified for id=6
+[2025-11-26 21:46:19] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-11-26 21:46:19] Redirecting to patient-dashboard.php
+[2025-12-01 18:21:16] Login attempt: identifier=BB, requested_role=doctor
+[2025-12-01 18:21:16] User found: id=7, db_role=doctor
+[2025-12-01 18:21:16] Password verified for id=7
+[2025-12-01 18:21:16] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-12-01 18:21:16] Redirecting to doctor-dashboard.php
+[2025-12-01 20:33:42] Login attempt: identifier=123, requested_role=patient
+[2025-12-01 20:33:42] User found: id=1, db_role=patient
+[2025-12-01 20:33:42] Password verified for id=1
+[2025-12-01 20:33:42] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-12-01 20:33:42] Redirecting to patient-dashboard.php
+[2025-12-01 21:19:32] Login attempt: identifier=john.doe@medicare.com, requested_role=doctor
+[2025-12-01 21:19:32] User found: id=2, db_role=doctor
+[2025-12-01 21:20:15] Login attempt: identifier=john.doe, requested_role=doctor
+[2025-12-01 21:20:15] User found: id=2, db_role=doctor
+[2025-12-01 21:22:29] Login attempt: identifier=john.doe, requested_role=doctor
+[2025-12-01 21:22:29] User found: id=2, db_role=doctor
+[2025-12-01 21:22:45] Login attempt: identifier=john.doe, requested_role=doctor
+[2025-12-01 21:22:45] User found: id=2, db_role=doctor
+[2025-12-01 21:28:45] Login attempt: identifier=111, requested_role=patient
+[2025-12-01 21:28:45] User found: id=11, db_role=patient
+[2025-12-01 21:28:45] Password verified for id=11
+[2025-12-01 21:28:45] Patient branch: file_exists(patient-dashboard.php)=1; headers_sent=0
+[2025-12-01 21:28:45] Redirecting to patient-dashboard.php
+[2025-12-01 21:29:24] Login attempt: identifier=111, requested_role=doctor
+[2025-12-01 21:29:24] User found: id=11, db_role=doctor
+[2025-12-01 21:29:24] Password verified for id=11
+[2025-12-01 21:29:24] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-12-01 21:29:24] Redirecting to doctor-dashboard.php
+[2025-12-01 21:29:56] Login attempt: identifier=111, requested_role=patient
+[2025-12-01 21:29:56] User found: id=11, db_role=doctor
+[2025-12-01 21:29:56] Password verified for id=11
+[2025-12-01 21:29:56] Role mismatch: requested=patient, db_role=doctor, id=11
+[2025-12-01 21:30:03] Login attempt: identifier=111, requested_role=doctor
+[2025-12-01 21:30:03] User found: id=11, db_role=doctor
+[2025-12-01 21:30:03] Password verified for id=11
+[2025-12-01 21:30:03] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-12-01 21:30:03] Redirecting to doctor-dashboard.php
+[2025-12-01 21:30:13] Login attempt: identifier=111, requested_role=doctor
+[2025-12-01 21:30:13] User found: id=11, db_role=doctor
+[2025-12-01 21:30:13] Password verified for id=11
+[2025-12-01 21:30:13] Doctor branch: file_exists(doctor-dashboard.php)=1; headers_sent=0
+[2025-12-01 21:30:13] Redirecting to doctor-dashboard.php

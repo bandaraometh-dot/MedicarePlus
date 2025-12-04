@@ -23,7 +23,7 @@
           <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="doctors.php">Doctors</a></li>
             <li><a href="appointments.html" class="active">Appointments</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -114,15 +114,13 @@
               </div>
               <div class="form-group">
                 <label for="doctor">Preferred Doctor</label>
-                <select id="doctor" name="doctor" required>
+                <select id="doctor" name="doctor">
                   <option value="">Select Doctor</option>
-                  <option value="dr-smith">Dr. Sarah Smith</option>
-                  <option value="dr-johnson">Dr. Michael Johnson</option>
-                  <option value="dr-williams">Dr. Emily Williams</option>
-                  <option value="dr-brown">Dr. James Brown</option>
-                  <option value="dr-davis">Dr. Jennifer Davis</option>
-                  <option value="dr-miller">Dr. Robert Miller</option>
                 </select>
+                <div
+                  id="selected-doctor-info"
+                  style="margin-top: 8px; display: none"
+                ></div>
               </div>
             </div>
 
@@ -243,7 +241,7 @@
             <ul>
               <li><a href="home.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="doctors.php">Doctors</a></li>
               <li><a href="appointments.html">Appointments</a></li>
               <li><a href="about.html">About Us</a></li>
             </ul>
@@ -302,10 +300,166 @@
 
         // Form submission: allow server to handle booking
         const form = document.querySelector(".appointment-form");
-        form.addEventListener("submit", function (e) {
-          // Let the form submit to `appointments.php` (method POST)
-          // You can optionally show a confirmation client-side, but submission will continue
-        });
+        // No custom submit handler needed as the select now has name="doctor"
+
+        // If the page is opened with ?doctor=ID we hide the select and show info
+        (function handlePrefillDoctor() {
+          const params = new URLSearchParams(window.location.search);
+          const docId = params.get("doctor");
+          const docName = params.get("doctor_name");
+          const selGroup = document.getElementById("doctor");
+          const infoDiv = document.getElementById("selected-doctor-info");
+          if (docId && /^[0-9]+$/.test(docId)) {
+            // Hide the select to avoid confusion, but keep a visible label
+            if (selGroup) {
+              selGroup.style.display = "none";
+              selGroup.disabled = true; // Disable so it doesn't submit
+            }
+            infoDiv.style.display = "block";
+            const nameText = docName
+              ? decodeURIComponent(docName)
+              : "Doctor ID: " + docId;
+            infoDiv.innerHTML =
+              "<strong>Selected Doctor:</strong> " +
+              nameText +
+              ' <a href="doctors.php" style="margin-left:8px;">Change</a>';
+            // Also ensure hidden input exists now (in case user doesn't submit via script)
+            const formEl = document.querySelector(".appointment-form");
+            if (formEl && !formEl.querySelector('input[name="doctor"]')) {
+              const hidden = document.createElement("input");
+              hidden.type = "hidden";
+              hidden.name = "doctor";
+              hidden.value = docId;
+              formEl.appendChild(hidden);
+            }
+          }
+        })();
+
+        // Fetch doctors for a department and populate select
+        function populateDoctorsForDepartment(dept) {
+          const sel = document.getElementById("doctor");
+          // clear existing options (keep the first placeholder)
+          sel.innerHTML = '<option value="">Select Doctor</option>';
+          if (!dept) {
+            // No department selected: fetch all doctors
+            fetch("doctors_api.php")
+              .then((r) => r.json())
+              .then((data) => {
+                if (!Array.isArray(data) || data.length === 0) {
+                  // show placeholder and offer 'Show all' option
+                  const placeholder = document.createElement("option");
+                  placeholder.value = "";
+                  placeholder.textContent = "No doctors available";
+                  sel.appendChild(placeholder);
+                  const showAll = document.createElement("option");
+                  showAll.value = "__show_all__";
+                  showAll.textContent = "Show all doctors";
+                  sel.appendChild(showAll);
+                  sel.disabled = false; // keep enabled per request
+                  return;
+                }
+                data.forEach((d) => {
+                  const opt = document.createElement("option");
+                  opt.value = d.doctor_id;
+                  opt.textContent =
+                    (d.first_name || "") +
+                    " " +
+                    (d.last_name || "") +
+                    (d.specialization ? " — " + d.specialization : "");
+                  sel.appendChild(opt);
+                });
+                sel.disabled = false;
+
+                // Auto-select from URL param if present
+                const params = new URLSearchParams(window.location.search);
+                const docParam = params.get("doctor");
+                if (docParam && /^[0-9]+$/.test(docParam)) sel.value = docParam;
+              })
+              .catch((err) => {
+                console.error("Failed to load doctors:", err);
+                // keep the select enabled and show an option to try all doctors
+                sel.innerHTML = '<option value="">Select Doctor</option>';
+                const placeholder = document.createElement("option");
+                placeholder.value = "";
+                placeholder.textContent = "No doctors available";
+                sel.appendChild(placeholder);
+                const showAll = document.createElement("option");
+                showAll.value = "__show_all__";
+                showAll.textContent = "Show all doctors";
+                sel.appendChild(showAll);
+                sel.disabled = false;
+              });
+            return;
+          }
+          fetch("doctors_api.php?department=" + encodeURIComponent(dept))
+            .then((r) => r.json())
+            .then((data) => {
+              if (!Array.isArray(data) || data.length === 0) {
+                // no doctors found for selected department — add placeholder and show-all
+                const placeholder = document.createElement("option");
+                placeholder.value = "";
+                placeholder.textContent = "No doctors in this department";
+                sel.appendChild(placeholder);
+                const showAll = document.createElement("option");
+                showAll.value = "__show_all__";
+                showAll.textContent = "Show all doctors";
+                sel.appendChild(showAll);
+                sel.disabled = false; // keep enabled
+                return;
+              }
+              data.forEach((d) => {
+                const opt = document.createElement("option");
+                opt.value = d.doctor_id;
+                opt.textContent =
+                  (d.first_name || "") +
+                  " " +
+                  (d.last_name || "") +
+                  (d.specialization ? " — " + d.specialization : "");
+                sel.appendChild(opt);
+              });
+              sel.disabled = false;
+
+              // If URL contains ?doctor=ID, try to auto-select it
+              const params = new URLSearchParams(window.location.search);
+              const docParam = params.get("doctor");
+              if (docParam && /^[0-9]+$/.test(docParam)) {
+                sel.value = docParam;
+              }
+            })
+            .catch((err) => {
+              console.error("Failed to load doctors:", err);
+              // keep select enabled and present show-all option
+              sel.innerHTML = '<option value="">Select Doctor</option>';
+              const placeholder = document.createElement("option");
+              placeholder.value = "";
+              placeholder.textContent = "No doctors available";
+              sel.appendChild(placeholder);
+              const showAll = document.createElement("option");
+              showAll.value = "__show_all__";
+              showAll.textContent = "Show all doctors";
+              sel.appendChild(showAll);
+              sel.disabled = false;
+            });
+        }
+
+        // Wire department change to update doctor select
+        const deptSelect = document.getElementById("department");
+        if (deptSelect) {
+          deptSelect.addEventListener("change", function () {
+            populateDoctorsForDepartment(this.value);
+          });
+          // Populate doctors on load (all if no department selected)
+          populateDoctorsForDepartment(deptSelect.value || "");
+        }
+        // If user selects the special 'Show all doctors' option, reload the full list
+        const doctorSelect = document.getElementById("doctor");
+        if (doctorSelect) {
+          doctorSelect.addEventListener("change", function () {
+            if (this.value === "__show_all__") {
+              populateDoctorsForDepartment("");
+            }
+          });
+        }
       });
     </script>
   </body>

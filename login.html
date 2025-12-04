@@ -23,7 +23,7 @@
           <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="doctors.php">Doctors</a></li>
             <li><a href="appointments.html">Appointments</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -326,7 +326,7 @@
             <ul>
               <li><a href="home.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="doctors.html">Doctors</a></li>
+              <li><a href="doctors.php">Doctors</a></li>
               <li><a href="appointments.html">Appointments</a></li>
               <li><a href="about.html">About Us</a></li>
             </ul>
@@ -363,6 +363,39 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Show registration success alert if redirected here after register
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("registered") === "1") {
+          const alert = document.createElement("div");
+          alert.className = "login-alert";
+          alert.style.cssText =
+            "background:#d4edda;color:#155724;padding:12px 16px;border-radius:8px;margin:12px auto;max-width:900px;font-weight:600;text-align:center;";
+          alert.textContent =
+            "Registration successful. Please sign in with your new account.";
+          const container = document.querySelector(".container");
+          if (container) container.parentNode.insertBefore(alert, container);
+        }
+
+        // Show login errors (invalid credentials, missing fields, or role mismatch)
+        const loginError = params.get("error");
+        if (loginError) {
+          let msg = "Login error.";
+          if (loginError === "missing")
+            msg = "Please enter both username and password.";
+          else if (loginError === "invalid")
+            msg = "Invalid username/email or password.";
+          else if (loginError === "role_mismatch")
+            msg =
+              "Selected login type does not match your account role. Use the correct tab or contact administrator.";
+          const errEl = document.createElement("div");
+          errEl.className = "login-alert";
+          errEl.style.cssText =
+            "background:#f8d7da;color:#721c24;padding:12px 16px;border-radius:8px;margin:12px auto;max-width:900px;font-weight:600;text-align:center;";
+          errEl.textContent = msg;
+          const container = document.querySelector(".container");
+          if (container) container.parentNode.insertBefore(errEl, container);
+        }
+
         // Role tabs functionality
         const roleTabs = document.querySelectorAll(".role-tab");
         const loginForms = document.querySelectorAll(".login-form");
